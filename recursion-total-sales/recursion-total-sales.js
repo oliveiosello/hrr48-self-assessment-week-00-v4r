@@ -45,9 +45,25 @@
 //
 // returns 60
 
+//in obj
+//out int
 
+//create acc to cap. sales
+//iter over keys
+  //collect val of indSales
+  //add to acc
+  //if manages
+    //recurse func
+//return acc
 
 var totalSales = function (salesTeam) {
-  // All your code in this function body
+  let allSales = 0;
+  for (var key in salesTeam) {
+    allSales += salesTeam.individualSales;
+    if (salesTeam.manages.length !== 0) {
+      totalSales(salesTeam.manages);
+    }
+  }
+  return allSales;
 };
 
