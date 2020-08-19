@@ -21,7 +21,14 @@
  *
  */
 
+ //in int & func
+ //out func
+
 var nTimes = function(n, func) {
-  // Your code here.
+  return func() {
+    //returned func shoudl take orig func inputs
+    return func(n);
+    //return call of passed in fun (add, in this case) passing in the value
+  };
 };
 
