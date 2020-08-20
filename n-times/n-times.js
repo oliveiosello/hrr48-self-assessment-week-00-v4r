@@ -23,12 +23,13 @@
 
  //in int & func
  //out func
-
 var nTimes = function(n, func) {
-  return func() {
-    //returned func shoudl take orig func inputs
-    return func(n);
-    //return call of passed in fun (add, in this case) passing in the value
+  let last
+  return function() {
+    if (n > 0) {
+      n--
+      last = func.apply(null, arguments)
+    };
+    return last;
   };
 };
-
